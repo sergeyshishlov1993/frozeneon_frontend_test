@@ -22,6 +22,7 @@ const allProducts = ref<Product[]>([]);
 const currentPage = ref<number>(0);
 const isLoading = ref<boolean>(false);
 const itemsPerPage = 10;
+const isInitialized = ref<boolean>(false);
 const searchQuery = ref<string>("");
 const visibleProducts = ref<Product[]>([]);
 
@@ -32,6 +33,7 @@ const fetchAllProducts = async () => {
     throw new Error("API data is not valid");
   }
   allProducts.value = data.products;
+  isInitialized.value = true;
 };
 const fetchNextProducts = (): void => {
   if (isLoading.value) return;
@@ -83,7 +85,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="main-page">
+  <div class="main-page" v-if="isInitialized">
     <UiInput
       type="search"
       placeholder="search"
