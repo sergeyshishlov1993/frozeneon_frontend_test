@@ -20,4 +20,10 @@ defineProps({
   line-height: 1.4;
   color: darkcyan;
 }
+
+@media (max-width: 767px) {
+  .brand {
+    font-size: 14px;
+  }
+}
 </style>

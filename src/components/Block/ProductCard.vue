@@ -89,6 +89,12 @@ const props = defineProps<{
 @media (max-width: 767px) {
   .product__card {
     flex-direction: column;
+    &_description {
+      &-info {
+        justify-content: space-between;
+        gap: 0;
+      }
+    }
   }
 }
 </style>

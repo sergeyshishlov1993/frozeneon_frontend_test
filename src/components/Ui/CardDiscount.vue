@@ -17,4 +17,10 @@ defineProps({
   font-size: 18px;
   color: darkred;
 }
+
+@media (max-width: 767px) {
+  .discount {
+    font-size: 14px;
+  }
+}
 </style>
